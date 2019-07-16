@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Emp data</title>
+</head>
+<body>
+<table align="center" bgcolor="#ee82ee" border="1" width="400">
+    <h1 align="center">Male or Female Data</h1>
+    <tr>
+        <th>idno</th>
+        <th>name</th>
+        <th>gender</th>
+        <th>salary</th>
+    </tr>
+
+    {% for x,y in emp.items %}
+        {% if y.gender == "Male" %}
+            <tr bgcolor="#8a2be2">
+                <th>{{ x }}</th>
+                <th>{{ y.name }}</th>
+                <th bgcolor="aqua">{{ y.gender }}</th>
+                <th>{{ y.salary }}</th>
+            </tr>
+        {% endif %}
+    {% endfor %}
+
+    {% for x,y in emp.items %}
+        {% if y.gender == "Female" %}
+            <tr bgcolor="#7fff00">
+                <th>{{ x }}</th>
+                <th>{{ y.name }}</th>
+                <th bgcolor="red">{{ y.gender }}</th>
+                <th>{{ y.salary }}</th>
+            </tr>
+        {% endif %}
+    {% endfor %}
+
+</table>
+</body>
+</html>
+
